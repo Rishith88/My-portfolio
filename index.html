@@ -1,0 +1,1571 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishith Manchala | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: none;
+        }
+        .custom-cursor{
+             width: 24px;
+             height: 24px;
+             border: 2px solid #7DF9FF;
+             border-radius: 50%;
+             position: fixed;
+             top: 0;
+             left: 0;
+             transform: translate(-50%, -50%);
+             pointer-events: none;
+             transition: transform 0.1s ease-out;
+             z-index: 99999;
+             box-shadow: 0 0 12px rgba(125, 249, 255, 0.4);
+        }
+        .custom-cursor::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #FFD97D;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+}
+@media (pointer: coarse) {
+    * {
+        cursor: auto;
+    }
+
+    .custom-cursor {
+        display: none;
+    }
+}
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #1a1c1e;
+            color: #ffffff;
+            font-family: 'Merriweather', serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(125, 249, 255, 0.12), transparent 70%);
+            top: 20%;
+            left: 10%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        
+
+        .welcome-page {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a1c1e;
+            z-index: 20;
+            animation: disappear 1s ease-in-out 5.3s forwards;
+        }
+
+        
+
+        .intro-logo {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            animation: logoIntro 2s ease-in-out forwards;
+        }
+
+        .intro-logo img {
+            width: clamp(140px, 22vw, 260px);
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 18px rgba(160, 80, 255, 0.65));
+        }
+
+        @keyframes logoIntro {
+            0% {
+                opacity: 0;
+                transform: scale(0.35) rotate(-25deg);
+                filter: blur(12px);
+            }
+
+            35% {
+                opacity: 1;
+                transform: scale(1.12) rotate(5deg);
+                filter: blur(0);
+            }
+
+            65% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.65) rotate(10deg);
+            }
+        }
+
+        
+
+        .name {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .name span {
+            display: inline-block;
+            background: linear-gradient(
+                135deg,
+                #7DF9FF 0%,
+                #FFD97D 50%,
+                #ffffff 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: assemble 2.5s cubic-bezier(0.19, 1, 0.22, 1) both;
+        }
+
+       
+
+        .name .row:nth-child(1) span:nth-child(1) {--x: -300px; --y: -150px; --rotate: -120deg; --delay: 0.1s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(1) span:nth-child(2) {--x: 150px; --y: -400px; --rotate: 90deg; --delay: 0.3s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(1) span:nth-child(3) {--x: -250px; --y: 250px; --rotate: 180deg; --delay: 0s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(1) span:nth-child(4) {--x: 400px; --y: 100px; --rotate: -60deg; --delay: 0.4s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(1) span:nth-child(5) { --x: -100px; --y: -350px; --rotate: 210deg; --delay: 0.2s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(1) span:nth-child(6) {--x: 350px; --y: -200px; --rotate: -90deg; --delay: 0.5s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(1) span:nth-child(7) {--x: -450px; --y: 50px; --rotate: 140deg; --delay: 0.15s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        
+
+        .name .row:nth-child(2) span:nth-child(1) {--x: 200px; --y: 350px; --rotate: -180deg; --delay: 0.25s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(2) { --x: -350px; --y: -300px; --rotate: 80deg; --delay: 0.05s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(3) {--x: 100px; --y: 450px; --rotate: -240deg; --delay: 0.35s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(4) {--x: -200px; --y: 200px; --rotate: 300deg; --delay: 0.1s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(5) { --x: 450px; --y: -150px; --rotate: -45deg; --delay: 0.45s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(6) {--x: -150px; --y: -250px; --rotate: 160deg; --delay: 0.2s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(7) {--x: 300px; --y: 300px; --rotate: -310deg; --delay: 0.5s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        .name .row:nth-child(2) span:nth-child(8) {--x: -400px; --y: 400px; --rotate: 95deg; --delay: 0.12s;
+            animation-delay: calc(2s + var(--delay));
+        }
+
+        @keyframes assemble {
+            0% {
+                transform: translate(var(--x), var(--y)) rotate(var(--rotate)) scale(0);
+                opacity: 0;
+                filter: blur(12px);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0) scale(1);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        @keyframes disappear {
+            to {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+
+       
+
+        .top {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px 28px;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeInNav 1s ease 6.3s forwards;
+        }
+
+        .links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            opacity: 1;
+            color: #7DF9FF;
+        }
+
+        @keyframes fadeInNav {
+            to {
+                opacity: 1;
+            }
+        }
+
+        
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5vw;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .welcome-name {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            font-family: 'DM Serif Display', serif;
+            opacity: 0;
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 6.3s forwards;
+        }
+
+        .welcome-name h1 {
+            font-size: clamp(4.2rem, 15vw, 12.5rem);
+            line-height: 0.95;
+            letter-spacing: -2px;
+            background: linear-gradient(
+                135deg,
+                #7DF9FF 0%,
+                #FFD97D 50%,
+                #ffffff 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .leader {
+            display: block;
+            margin-top: 15px;
+            font-family: 'Merriweather', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFD97D;
+            letter-spacing: 0.5px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.2s ease 6.3s forwards;
+        }
+
+        .leader a {
+            color: #7DF9FF;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .leader a:hover {
+            color: #FFD97D;
+            text-decoration: underline;
+        }
+
+    
+
+        .about-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 8vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .about-content:hover {
+            transform: translateY(-8px);
+            border-color: rgba(125, 249, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .about-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(125, 249, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .about-text h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #7DF9FF;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        
+
+        .Projects {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 8vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        .projects-container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .Projects h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #7DF9FF;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(125, 249, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .project-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .project-tags span {
+            background: rgba(125, 249, 255, 0.08);
+            color: #7DF9FF;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(125, 249, 255, 0.2);
+        }
+
+        .project-link {
+            color: #FFD97D;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #7DF9FF;
+        }
+
+        
+
+        #matrixCanvas {
+            display: block;
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Keep content above the canvas */
+        .hero,
+        .about-page,
+        .Projects,
+        .contact-page {
+            position: relative;
+            z-index: 1;
+        }
+
+        
+
+        .contact-page {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 8vw 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            color: #7DF9FF;
+            margin-bottom: 20px;
+        }
+
+        .contact-subtitle {
+            color: rgba(255,255,255,0.75);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 40px 25px;
+            transition: all 0.35s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(125,249,255,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #7DF9FF;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card span {
+            color: #FFD97D;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .contact-footer {
+            margin-top: 80px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            line-height: 2;
+        }
+
+        
+
+        @media (max-width: 800px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 30px;
+                gap: 30px;
+            }
+
+            .about-photo {
+                width: 180px;
+                height: 180px;
+            }
+
+            .welcome-name h1 {
+                font-size: clamp(4rem, 17vw, 7rem);
+            }
+
+            #matrixCanvas {
+                opacity: 0.72;
+            }
+
+            .top {
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 12px 18px;
+            }
+
+            .links {
+                gap: 20px;
+            }
+
+            .links a {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-page {
+                padding: 100px 6vw 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container h2 {
+                font-size: 2.3rem;
+            }
+
+            .leader {
+                font-size: 15px;
+            }
+
+            .name {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+        .quote {
+            margin-top: 35px;
+            font-family: 'DM serif Display',sans-serif;
+            font-size: 40px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            background: linear-gradient(45deg,white,blue);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px rgba(125, 249, 255, 0.2);
+            opacity: 1;
+
+         }
+    </style>
+</head>
+
+<body>
+    <div class="custom-cursor"></div>
+    <canvas id="matrixCanvas"></canvas>
+
+    
+    <div class="welcome-page">
+
+        <div class="intro-logo">
+            <img src="Logo.png" alt="Rishith Personal Logo">
+        </div>
+
+        <h1 class="name">
+            <div class="row">
+                <span>R</span><span>I</span><span>S</span><span>H</span>
+                <span>I</span><span>T</span><span>H</span>
+            </div>
+
+            <div class="row">
+                <span>M</span><span>A</span><span>N</span><span>C</span>
+                <span>H</span><span>A</span><span>L</span><span>A</span>
+            </div>
+        </h1>
+        
+    </div>
+    
+    <nav class="top">
+        <ul class="links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+    <section class="hero">
+
+        <div class="welcome-name">
+            <h1>Rishith</h1>
+            <h1>Manchala</h1>
+        </div>
+
+        <p class="leader">
+            Leader of Yuvora |
+            <a href="https://yuvora.org" target="_blank" rel="noopener noreferrer">
+                Visit Yuvora ↗
+            </a>
+        </p>
+        <div class="quote">
+            Design & Develop
+        </div>
+    
+    </section>
+
+    
+    <section id="about" class="about-page">
+
+        <div class="about-content">
+
+            <img src="portrait.jpg"
+                 alt="Rishith Manchala"
+                 class="about-photo">
+
+            <div class="about-text">
+                <h2>About Me</h2>
+
+                <p>
+                    Hello! I'm Rishith Manchala, a passionate developer and creative thinker focused on crafting intuitive, highly functional visual experiences.
+                </p>
+
+                <p>
+                    I thrive on solving complex technical challenges while keeping user experience and subtle visual animations at the core of my work.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="projects" class="Projects">
+
+        <div class="projects-container">
+
+            <h2>Projects</h2>
+
+            <div class="project-grid">
+
+                
+                <div class="project-card">
+                    <h3>Scholarstock</h3>
+
+                    <p>
+                        A site where students can get study material for various competitive examinations like JEE, NEET, CLAT, CUET, DUET and others. Built using React + Vite with a CORS backend.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Vite</span>
+                        <span>Node.js</span>
+                    </div>
+
+                    <a href="https://github.com/Rishith88/Scholarstock.com"
+                       target="_blank"
+                       class="project-link">View code</a>
+
+                    <a href="https://scholarstock.dpdns.org/"
+                       target="_blank"
+                       class="project-link"
+                       style="margin-left: 15px;">Demo</a>
+                </div>
+
+                
+                <div class="project-card">
+                    <h3>CS School Sync</h3>
+
+                    <p>
+                        An ed-tech portal enabling efficient school-to-parent communication, announcements, event tracking, and messaging. Accepted by school leadership for real-world implementation.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>TypeScript</span>
+                        <span>React</span>
+                        <span>Tailwind</span>
+                    </div>
+
+                    <a href="https://github.com/The-CS-Connect-organisation/OP-CS_CONNECT/"
+                       target="_blank"
+                       class="project-link">View code</a>
+
+                    <a href="https://the-cs-connect-organisation.github.io/OP-CS_CONNECT/"
+                       target="_blank"
+                       class="project-link"
+                       style="margin-left: 15px;">Demo</a>
+                </div>
+
+                
+                <div class="project-card">
+                    <h3>Yuvora</h3>
+
+                    <p>
+                        A client-rendered community platform designed for club meetings, announcements, and high-grade secure member authentication with custom .org domain privacy.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                    </div>
+
+                    <a href="https://github.com/Yuvora-Club/Yuvora-official-websitet_v2"
+                       target="_blank"
+                       class="project-link">View code</a>
+
+                    <a href="https://yuvora.org"
+                       target="_blank"
+                       class="project-link"
+                       style="margin-left: 15px;">Demo</a>
+                </div>
+
+                
+                <div class="project-card">
+                    <h3>IRIS</h3>
+
+                    <p>
+                        IRIS stands for Integrated Reconnaissance Interception Swarm. It is a simulation designed by me and my friend to explore ways to dispose of dysfunctional satellites and other materials in space that pose risks to operational satellites. We combine physics and 3D web development to build the simulation.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>JavaScript</span>
+                        <span>DirectX</span>
+                        <span>CSS</span>
+                        <span>GLSL and HLSL shaders</span>
+                        <span>C++</span>
+                    </div>
+
+                    <a href="https://github.com/IRIS-int/IRIS-simulation"
+                       target="_blank"
+                       class="project-link">View code</a>
+
+                    <a href="https://iris-int.github.io/IRIS-simulation/index-hyperreal-directx.html"
+                       target="_blank"
+                       class="project-link">Demo</a>
+                </div>
+
+                
+                <div class="project-card">
+                    <h3>Solar Saathi</h3>
+
+                    <p>
+                        Solar Saathi is a website designed for a business idea involving solar power rentals. It includes client and admin panels, allowing customers to book solar installation services. The platform supports multiple Indian languages, including Hindi, English, Telugu and Tamil.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                    </div>
+
+                    <a href="https://github.com/IRIS-int/IRIS-simulation"
+                       target="_blank"
+                       class="project-link">View code</a>
+
+                    <a href="https://iris-int.github.io/IRIS-simulation/index-hyperreal-directx.html"
+                       target="_blank"
+                       class="project-link">Demo</a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    
+    <section id="contact" class="contact-page">
+
+        <div class="contact-container">
+
+            <h2>Let's Connect</h2>
+
+            <p class="contact-subtitle">
+                Want to connect and build more projects then contact me 
+            </p>
+
+            <div class="contact-grid">
+
+               
+                <a href="mailto:rishithmanchala989@gmail.com"
+                   class="contact-card">
+
+                    <div class="contact-icon">✉</div>
+                    <h3>Email</h3>
+                    <p>rishithmanchala989@gmail.com</p>
+                    <span>Send me an email →</span>
+
+                </a>
+
+                
+                <a href="https://github.com/Rishith88"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-card">
+
+                    <div class="contact-icon">⌘</div>
+                    <h3>GitHub</h3>
+                    <p>@Rishith88</p>
+                    <span>Explore my repositories →</span>
+
+                </a>
+
+                
+                <a href="https://slack.com"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-card">
+
+                    <div class="contact-icon">#</div>
+                    <h3>Slack</h3>
+                    <p>rishithamnchala989</p>
+                    <span>Connect on Slack →</span>
+
+                </a>
+
+            </div>
+
+            <footer>
+                <div class="contact-footer">
+                    <p>Designed & Built by Rishith Manchala</p>
+                    <p>© 2026 All Rights Reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+
+    </section>
+
+    
+    <script>
+
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d", { alpha: true });
+
+        let particles = [];
+        let animationFrame = 0;
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+        let pointer = {
+            x: 0,
+            y: 0,
+            active: false
+        };
+
+        let portraitLoaded = false;
+        let startTime = performance.now();
+
+        const PHOTO_PATH = "portrait.jpg";
+        const PARTICLE_STEP = 3;
+        const PARTICLE_COLOR = [125, 249, 255];
+        const BACKGROUND_TOLERANCE = 30;
+        const BACKGROUND_SEED_BRIGHTNESS = 80;
+
+        function resizeCanvas() {
+
+            width = window.innerWidth;
+            height = window.innerHeight;
+            pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = Math.floor(width * pixelRatio);
+            canvas.height = Math.floor(height * pixelRatio);
+
+            canvas.style.width = width + "px";
+            canvas.style.height = height + "px";
+
+            ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+            if (portraitLoaded) {
+                buildPortraitParticles();
+            }
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        window.addEventListener("pointermove", (event) => {
+            pointer.x = event.clientX;
+            pointer.y = event.clientY;
+            pointer.active = true;
+        }, { passive: true });
+
+        window.addEventListener("pointerleave", () => {
+            pointer.active = false;
+        });
+
+        const profileImage = new Image();
+
+        try {
+            const photoUrl = new URL(PHOTO_PATH, document.baseURI);
+
+            if (photoUrl.origin !== window.location.origin) {
+                profileImage.crossOrigin = "anonymous";
+            }
+        } catch (error) {
+            /* Let the browser resolve the relative path. */
+        }
+
+        profileImage.onload = () => {
+            portraitLoaded = true;
+            buildPortraitParticles();
+        };
+
+        profileImage.onerror = () => {
+            console.warn(
+                `Could not load "${PHOTO_PATH}". Keep the photo in the same folder as this HTML file and check its spelling.`
+            );
+
+            buildFallbackParticles();
+        };
+
+        profileImage.src = PHOTO_PATH;
+
+        function buildBackgroundMask(data, width, height) {
+
+            const total = width * height;
+            const mask = new Uint8Array(total);
+            const queue = new Int32Array(total);
+
+            let head = 0;
+            let tail = 0;
+
+            const seed = (index) => {
+
+                if (mask[index]) return;
+
+                const offset = index * 4;
+
+                const red = data[offset];
+                const green = data[offset + 1];
+                const blue = data[offset + 2];
+
+                const brightness =
+                    red * 0.299 +
+                    green * 0.587 +
+                    blue * 0.114;
+
+                if (
+                    brightness > BACKGROUND_SEED_BRIGHTNESS &&
+                    blue >= red - 12
+                ) {
+                    mask[index] = 1;
+                    queue[tail++] = index;
+                }
+            };
+
+            for (let x = 0; x < width; x++) {
+                seed(x);
+                seed((height - 1) * width + x);
+            }
+
+            for (let y = 0; y < height; y++) {
+                seed(y * width);
+                seed(y * width + width - 1);
+            }
+
+            const toleranceSquared =
+                BACKGROUND_TOLERANCE * BACKGROUND_TOLERANCE;
+
+            const neighbours = [
+                [1, 0],
+                [-1, 0],
+                [0, 1],
+                [0, -1]
+            ];
+
+            while (head < tail) {
+
+                const index = queue[head++];
+                const x = index % width;
+                const y = (index - x) / width;
+
+                const offset = index * 4;
+
+                const red = data[offset];
+                const green = data[offset + 1];
+                const blue = data[offset + 2];
+
+                for (let n = 0; n < neighbours.length; n++) {
+
+                    const nx = x + neighbours[n][0];
+                    const ny = y + neighbours[n][1];
+
+                    if (nx < 0 || nx >= width || ny < 0 || ny >= height) {
+                        continue;
+                    }
+
+                    const nextIndex = ny * width + nx;
+
+                    if (mask[nextIndex]) continue;
+
+                    const nextOffset = nextIndex * 4;
+
+                    const dr = data[nextOffset] - red;
+                    const dg = data[nextOffset + 1] - green;
+                    const db = data[nextOffset + 2] - blue;
+
+                    if (
+                        dr * dr + dg * dg + db * db <
+                        toleranceSquared
+                    ) {
+                        mask[nextIndex] = 1;
+                        queue[tail++] = nextIndex;
+                    }
+                }
+            }
+
+            let backgroundCount = 0;
+
+            for (let i = 0; i < total; i++) {
+                backgroundCount += mask[i];
+            }
+
+            const ratio = backgroundCount / total;
+
+            if (ratio < 0.05 || ratio > 0.95) {
+                return null;
+            }
+
+            return mask;
+        }
+
+        function buildPortraitParticles() {
+
+            const sampleCanvas = document.createElement("canvas");
+
+            const sampleCtx = sampleCanvas.getContext("2d", {
+                willReadFrequently: true
+            });
+
+            const maxSampleWidth = 190;
+            const maxSampleHeight = 230;
+
+            const imageRatio =
+                profileImage.naturalWidth / profileImage.naturalHeight;
+
+            let sampleWidth = maxSampleWidth;
+            let sampleHeight = sampleWidth / imageRatio;
+
+            if (sampleHeight > maxSampleHeight) {
+                sampleHeight = maxSampleHeight;
+                sampleWidth = sampleHeight * imageRatio;
+            }
+
+            sampleWidth = Math.max(1, Math.round(sampleWidth));
+            sampleHeight = Math.max(1, Math.round(sampleHeight));
+
+            sampleCanvas.width = sampleWidth;
+            sampleCanvas.height = sampleHeight;
+
+            sampleCtx.clearRect(0, 0, sampleWidth, sampleHeight);
+
+            sampleCtx.drawImage(
+                profileImage,
+                0,
+                0,
+                sampleWidth,
+                sampleHeight
+            );
+
+            let imageData;
+
+            try {
+
+                imageData = sampleCtx.getImageData(
+                    0,
+                    0,
+                    sampleWidth,
+                    sampleHeight
+                ).data;
+
+            } catch (error) {
+
+                console.error(
+                    "The portrait image could not be sampled:",
+                    error
+                );
+
+                buildFallbackParticles();
+                return;
+            }
+
+            const backgroundMask = buildBackgroundMask(
+                imageData,
+                sampleWidth,
+                sampleHeight
+            );
+
+            const isMobile = width < 800;
+
+            const portraitCenterX = width * 0.5;
+            const portraitCenterY = height * 0.51;
+
+            const availableWidth = isMobile
+                ? Math.min(width * 0.86, 380)
+                : Math.min(width * 0.62, 620);
+
+            const scale = availableWidth / sampleWidth;
+            const renderedHeight = sampleHeight * scale;
+
+            particles = [];
+
+            for (let y = 0; y < sampleHeight; y += PARTICLE_STEP) {
+
+                for (let x = 0; x < sampleWidth; x += PARTICLE_STEP) {
+
+                    const index = (y * sampleWidth + x) * 4;
+
+                    const red = imageData[index];
+                    const green = imageData[index + 1];
+                    const blue = imageData[index + 2];
+                    const alpha = imageData[index + 3];
+
+                    if (alpha < 90) continue;
+
+                    if (
+                        backgroundMask &&
+                        backgroundMask[y * sampleWidth + x]
+                    ) {
+                        continue;
+                    }
+
+                    const brightness =
+                        red * 0.299 +
+                        green * 0.587 +
+                        blue * 0.114;
+
+                    if (brightness < 24) continue;
+
+                    const normalizedBrightness = brightness / 255;
+
+                    const depth =
+                        (normalizedBrightness - 0.45) * 34;
+
+                    const targetX =
+                        portraitCenterX +
+                        (x - sampleWidth / 2) * scale;
+
+                    const targetY =
+                        portraitCenterY +
+                        (y - sampleHeight / 2) * scale;
+
+                    particles.push({
+
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+
+                        z: (Math.random() - 0.5) * 120,
+
+                        targetX,
+                        targetY,
+
+                        targetZ: depth,
+
+                        baseSize:
+                            0.65 + normalizedBrightness * 1.25,
+
+                        brightness:
+                            0.35 + normalizedBrightness * 0.65,
+
+                        phase: Math.random() * Math.PI * 2,
+
+                        drift: 0.4 + Math.random() * 0.9,
+
+                        delay: Math.random() * 0.75
+                    });
+                }
+            }
+
+            if (particles.length === 0) {
+                buildFallbackParticles();
+                return;
+            }
+
+            startAnimation();
+        }
+
+        function buildFallbackParticles() {
+
+            particles = [];
+
+            const centerX = width * 0.5;
+            const centerY = height * 0.5;
+
+            for (let i = 0; i < 900; i++) {
+
+                const angle = Math.random() * Math.PI * 2;
+                const radius = Math.sqrt(Math.random());
+
+                const x = Math.cos(angle) * 125 * radius;
+                const y = Math.sin(angle) * 165 * radius;
+
+                particles.push({
+
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+
+                    z: (Math.random() - 0.5) * 80,
+
+                    targetX: centerX + x,
+                    targetY: centerY + y,
+
+                    targetZ: Math.cos(angle * 2) * 12,
+
+                    baseSize: 1.1,
+                    brightness: 0.8,
+
+                    phase: Math.random() * Math.PI * 2,
+
+                    drift: 0.5 + Math.random(),
+
+                    delay: Math.random() * 0.7
+                });
+            }
+
+            startAnimation();
+        }
+
+        function startAnimation() {
+
+            cancelAnimationFrame(animationFrame);
+
+            startTime = performance.now();
+
+            animate(startTime);
+        }
+
+        function animate(now) {
+
+            animationFrame = requestAnimationFrame(animate);
+
+            ctx.clearRect(0, 0, width, height);
+
+            const elapsed = (now - startTime) / 1000;
+
+            const isMobile = width < 800;
+
+            const mouseX = pointer.active
+                ? (pointer.x - width / 2) / width
+                : 0;
+
+            const mouseY = pointer.active
+                ? (pointer.y - height / 2) / height
+                : 0;
+
+            /* Soft halo behind the portrait */
+
+            const portraitX = width * 0.5;
+            const portraitY = height * 0.51;
+
+            const halo = ctx.createRadialGradient(
+                portraitX,
+                portraitY,
+                10,
+                portraitX,
+                portraitY,
+                isMobile ? 190 : 260
+            );
+
+            halo.addColorStop(
+                0,
+                "rgba(125, 249, 255, 0.075)"
+            );
+
+            halo.addColorStop(
+                1,
+                "rgba(125, 249, 255, 0)"
+            );
+
+            ctx.fillStyle = halo;
+            ctx.fillRect(0, 0, width, height);
+
+            for (const p of particles) {
+
+                const formation = Math.min(
+                    1,
+                    Math.max(
+                        0,
+                        (elapsed - p.delay * 0.55) / 2.0
+                    )
+                );
+
+                const eased = 1 - Math.pow(1 - formation, 3);
+
+                const idleX =
+                    Math.sin(elapsed * 0.75 + p.phase) * p.drift;
+
+                const idleY =
+                    Math.cos(elapsed * 0.65 + p.phase) * p.drift;
+
+                const targetX =
+                    p.x + (p.targetX - p.x) * eased;
+
+                const targetY =
+                    p.y + (p.targetY - p.y) * eased;
+
+                const targetZ =
+                    p.z + (p.targetZ - p.z) * eased;
+
+                p.x = targetX;
+                p.y = targetY;
+                p.z = targetZ;
+
+                /* Mouse parallax */
+
+                const parallaxX =
+                    mouseX * (p.z * 0.65 + 22);
+
+                const parallaxY =
+                    mouseY * (p.z * 0.5 + 18);
+
+                const perspective = 1 + p.z / 650;
+
+                const drawX =
+                    p.x + idleX + parallaxX;
+
+                const drawY =
+                    p.y + idleY + parallaxY;
+
+                const drawSize = Math.max(
+                    0.35,
+                    p.baseSize * perspective
+                );
+
+                
+
+                let repelX = 0;
+                let repelY = 0;
+
+                if (pointer.active && formation > 0.85) {
+
+                    const dx = drawX - pointer.x;
+                    const dy = drawY - pointer.y;
+
+                    const distance =
+                        Math.sqrt(dx * dx + dy * dy);
+
+                    const radius = 105;
+
+                    if (distance < radius && distance > 0) {
+
+                        const force =
+                            (1 - distance / radius) * 9;
+
+                        repelX =
+                            (dx / distance) * force;
+
+                        repelY =
+                            (dy / distance) * force;
+                    }
+                }
+
+                const finalX = drawX + repelX;
+                const finalY = drawY + repelY;
+
+                const shimmer =
+                    0.72 +
+                    Math.sin(elapsed * 2 + p.phase) * 0.16;
+
+                const alpha = Math.min(
+                    1,
+                    p.brightness *
+                    shimmer *
+                    (0.45 + formation * 0.55)
+                );
+
+                ctx.beginPath();
+
+                ctx.fillStyle =
+                    `rgba(${PARTICLE_COLOR[0]}, ${PARTICLE_COLOR[1]}, ${PARTICLE_COLOR[2]}, ${alpha})`;
+
+                ctx.shadowColor =
+                    "rgba(125, 249, 255, 0.8)";
+
+                ctx.shadowBlur = 5;
+
+                ctx.arc(
+                    finalX,
+                    finalY,
+                    drawSize,
+                    0,
+                    Math.PI * 2
+                );
+
+                ctx.fill();
+            }
+
+            ctx.shadowBlur = 0;
+        }
+        const ring = document.querySelector(".custom-cursor");
+
+if (ring) {
+    window.addEventListener("pointermove", (e) => {
+        ring.style.left = e.clientX + "px";
+        ring.style.top = e.clientY + "px";
+        ring.style.opacity = "1";
+    });
+
+    window.addEventListener("pointerleave", () => {
+        ring.style.opacity = "0";
+    });
+
+    document.querySelectorAll("a, button").forEach((element) => {
+        element.addEventListener("pointerenter", () => {
+            ring.style.transform = "translate(-50%, -50%) scale(1.5)";
+        });
+
+        element.addEventListener("pointerleave", () => {
+            ring.style.transform = "translate(-50%, -50%) scale(1)";
+        });
+    });
+}
+
+    </script>
+
+</body>
+</html>
